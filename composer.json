@@ -1,0 +1,25 @@
+{
+    "name": "pyncer/snyppet-task",
+    "type": "library",
+    "description": "Pyncer snyppet for handling background tasks.",
+    "homepage": "https://pyncer.com/snyppet/task",
+    "license": "Unlicense",
+    "require": {
+        "php": ">=8.3",
+        "pyncer/snyppet": "^1.2.1"
+    },
+    "autoload": {
+        "psr-4": {
+            "Pyncer\\Snyppet\\Task\\": "src/"
+        }
+    },
+    "support": {
+        "issues": "https://github.com/pyncerrc/pyncer-snyppet-task/issues",
+        "source": "https://github.com/pyncerrc/pyncer-snyppet-task"
+    },
+    "extra" : {
+        "branch-alias" : {
+            "dev-main" : "1.0-dev"
+        }
+    }
+}
