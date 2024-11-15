@@ -24,7 +24,7 @@ abstract class AbstractTask
     {
         $this->errors = [];
 
-        $taskMapper = new TaskMapepr($this->connection);
+        $taskMapper = new TaskMapper($this->connection);
         $taskModel = $taskMapper->selectByAlias($this->alias);
 
         if ($taskModel === null) {
@@ -42,14 +42,14 @@ abstract class AbstractTask
         $taskModel->setRunning(true);
         $taskModel->setRunningDateTime($this->connection->dateTime());
 
-        $taskModel->replace($taskModel);
+        $taskMapper->replace($taskModel);
 
         $this->runTask();
 
         $taskModel->setRunning(false);
         $taskModel->setRunningDateTime(null);
 
-        $taskModel->replace($taskModel);
+        $taskMapper->replace($taskModel);
     }
 
     abstract public function runTask(array $params = []): void;
